@@ -22,3 +22,6 @@ def home(request):
 
 def about(request):
   return render(request, 'about.html')
+
+def chicken_index(request):
+  return render(request, 'chickens/index.html', { 'chickens': chickens })
