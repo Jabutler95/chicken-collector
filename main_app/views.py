@@ -18,10 +18,12 @@ chickens = [
 
 # Define the home view
 def home(request):
-  return HttpResponse('<h1>Hello ᓚᘏᗢ</h1>')
+  return render(request, 'home.html')
 
 def about(request):
   return render(request, 'about.html')
 
 def chicken_index(request):
   return render(request, 'chickens/index.html', { 'chickens': chickens })
+
+
