@@ -9,4 +9,5 @@ urlpatterns = [
   path('chickens/create/', views.ChickenCreate.as_view(), name='chicken-create'),
   path('chickens/<int:pk>/update/', views.ChickenUpdate.as_view(), name='chicken-update'),
   path('chickens/<int:pk>/delete/', views.ChickenDelete.as_view(), name='chicken-delete'),
+  path('chickens/<int:chicken_id>/add-feeding/', views.add_feeding, name='add-feeding'),
 ]
