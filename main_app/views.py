@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Chicken
 
 
@@ -19,3 +20,9 @@ def chicken_index(request):
 def chicken_detail(request, chicken_id):
   chicken = Chicken.objects.get(id=chicken_id)
   return render(request, 'chickens/detail.html', { 'chicken': chicken })
+
+class ChickenCreate(CreateView):
+  model = Chicken
+  fields = '__all__'
+
+
