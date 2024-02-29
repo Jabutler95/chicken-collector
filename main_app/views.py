@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Chicken
 
+
 # Add the following import
 from django.http import HttpResponse
 
