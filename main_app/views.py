@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Chicken
+from .forms import FeedingForm
 
 
 # Add the following import
@@ -19,7 +20,8 @@ def chicken_index(request):
 
 def chicken_detail(request, chicken_id):
   chicken = Chicken.objects.get(id=chicken_id)
-  return render(request, 'chickens/detail.html', { 'chicken': chicken })
+  feeding_form = FeedingForm()
+  return render(request, 'chickens/detail.html', { 'chicken': chicken, 'feeding_form': feeding_form })
 
 class ChickenCreate(CreateView):
   model = Chicken
