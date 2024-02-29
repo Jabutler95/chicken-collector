@@ -12,6 +12,9 @@ def about(request):
   return render(request, 'about.html')
 
 def chicken_index(request):
+  chickens = Chicken.objects.all()
   return render(request, 'chickens/index.html', { 'chickens': chickens })
 
-
+def chicken_detail(request, chicken_id):
+  chicken = Chicken.objects.get(id=chicken_id)
+  return render(request, 'chicken/detail.html', { 'chicken': chicken })
