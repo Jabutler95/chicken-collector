@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Chicken
+from django.views.generic import ListView, DetailView
+from .models import Chicken, Toy
 from .forms import FeedingForm
 
 
@@ -44,3 +45,20 @@ class ChickenDelete(DeleteView):
   model = Chicken
   success_url = '/chickens/'
 
+class ToyCreate(CreateView):
+  model = Toy
+  fields = '__all__'
+
+class ToyList(ListView):
+  model = Toy
+
+class ToyDetail(DetailView):
+  model = Toy
+
+class ToyUpdate(UpdateView):
+  model = Toy
+  fields = ['name', 'color']
+
+class ToyDelete(DeleteView):
+  model = Toy
+  success_url = '/toys/'
