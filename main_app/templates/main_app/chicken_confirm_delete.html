@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>Delete Chicken?</h1>
+  <img src="{% static 'images/lowsus.jpeg' %}" alt="A low sus chicken"/>
+</div>
+<h2>Are you sure you want to set {{chicken.name}} free?</h2>
+
+<form action="" method="post" class="form">
+  {% csrf_token %}
+  <a 
+    href="{% url 'chicken-detail' chicken.id %}" 
+    class="btn secondary"
+  >
+    Cancel
+  </a>
+  <button type="submit" class="btn danger">Release {{chicken.name}}!</button>
+</form>
+
+{% endblock %}
