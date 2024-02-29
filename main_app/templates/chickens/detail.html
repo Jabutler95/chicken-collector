@@ -26,6 +26,10 @@
       <h2>A {{ chicken.breed }} hen.</h2>
     {% endif %}
     <p>{{ chicken.description }}</p>
+    <div class="chicken-actions">
+      <a href="{% url 'chicken-update' chicken.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'chicken-delete' chicken.id %}" class="btn danger">Delete</a>
+    </div>
   </div>
 </section>
 
