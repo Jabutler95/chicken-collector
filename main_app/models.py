@@ -33,7 +33,7 @@ class Chicken(models.Model):
     return self.name
   
   def get_absolute_url(self):
-    return reverse("chicken_detail", kwargs={"chicken_id": self.id})
+    return reverse("chicken-detail", kwargs={"chicken_id": self.id})
   
   def fed_for_today(self):
     return self.feeding_set.filter(date=date.today()).count() >= len(MEALS)
